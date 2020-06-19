@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="angapp">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Documento</title>
+
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <script src="js/angular.min.js"></script>
+        <script src="js/jquery/dist/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="col-sm-12">
+                    <h1> Resultado: {{1+1}}</h1>
+                    <h2 ng-bind="'Resultado: {{1+2}}'"></h2>
+                    
+                </div>
+        
+                <div class="col-sm-5">
+                                
+                    <form action="" id="formulario" name="formulario" novalidate>
+        
+                            <label for="">Nome</label>
+                            <input type="text" name="nome" class="form-control" ng-model="ordem.nome" required>
+                            <div class="alert alert-warning" ng-show="!ordem.nome && nome.$submitted" >Precisa inserir o nome</div>
+
+
+                            <label for="">Email</label>
+                            <input type="text" name="email" class="form-control" ng-model="ordem.email" >
+            
+                            <label for="">Quantidade {{ordem.quantidade}}</label>
+                            <input type="range" name="quantidade"  ng-model="ordem.quantidade" min="1" max="10" step="1">
+                            <br>
+                            <!--<div ng-show="formulario.$valid"> OK </div> -->
+                            <!--<input class="btn" type="submit" value="Ordenar" ng-disabled="formulario.$invalid" style="background-color: antiquewhite;"> -->
+                            <input class="btn" type="submit" value="Ordenar" style="background-color: antiquewhite;">
+                        </form>
+                </div>
+
+        </div>
+
+        <script >
+            var meuAppAngular = angular.module('angapp', []);
+        </script>
+    </body>
+    
+</html>
